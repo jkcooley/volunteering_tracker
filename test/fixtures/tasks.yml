@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  blurb: MyString
+  points: 1.5
+  start_date: 2024-08-12
+  end_date: 2024-08-12
+
+two:
+  blurb: MyString
+  points: 1.5
+  start_date: 2024-08-12
+  end_date: 2024-08-12
