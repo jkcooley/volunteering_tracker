@@ -1,0 +1,13 @@
+<h1><%= @org_profile.name %></h1>
+
+<h2><%= @task.title %></h2>
+<%= @task.blurb %>
+
+<%= form_with model: [ @user_profile, @user_profile.tasks.build ] do |form| %>
+  <%= form.label :hours %>
+  <%= form.text_field :hours %>
+  <% @user_profile.errors.full_messages_for(:tasks).each do |message| %>
+    <%= message %>
+    <% end %>
+    <%= form.submit "log" %>
+  <% end %>

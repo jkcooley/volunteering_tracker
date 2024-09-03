@@ -1,0 +1,39 @@
+<h1>Welcome!</h1>
+
+<%= form_for @user_profile do |form| %>
+   <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %><br>
+    <% @user_profile.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div><br>
+ 
+  <div>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+    <% @user_profile.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div><br>
+
+  <div>
+    <%= form.label :password %><br>
+    <%= form.text_field :password %><br>
+    Password must be at least 8 characters.
+    <% @user_profile.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div><br>
+
+  <div>
+    <%= form.submit "Create account" %>
+  </div>
+<% end %>
+
+<style>
+body {
+  font-family: 'Courier New', monospace;
+  background-color:#A0BFB6
+}
+</style>

@@ -1,0 +1,18 @@
+<h1><%= @org_profile.name %></h1>
+
+<h2><%= @task.title %></h2>
+<%= @task.blurb %>
+
+<!-- TODO if the user is logged in, pass info to this --!>
+<%= if @user_signed_in %>
+  <p>
+    <a href="tasks/<%= params[:task_id] %>/users/">Log this task</a>
+  </p>
+<% end %>
+
+<style>
+body {
+  font-family: 'Courier New', monospace;
+  background-color:#A0BFB6
+}
+</style>

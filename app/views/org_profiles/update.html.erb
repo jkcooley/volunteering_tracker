@@ -1,0 +1,35 @@
+<h2>who we are</h2>
+<%= form_with model: @org_profile do |form|%>
+  <% form.label :mission_statement %><br>
+  <%= form.text_field :mission_statement %><br>
+  <%= form.submit "update"%>
+<% end %>
+
+<h2>what we stand for</h2>
+<%= form_with model: @org_profile do |form|%>
+  <% form.label :blurb %><br>
+  <%= form.text_area :blurb %><br>
+  <%= form.submit "update"%>
+<% end %>
+
+<h3>Add opportunity:</h3>
+<%= form_with model: [ @org_profile, @org_profile.tasks.build ] do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :blurb %><br>
+    <%= form.text_area :blurb %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<style>
+body {
+  font-family: 'Courier New', monospace;
+  background-color:#A0BFB6
+}
+</style>

@@ -1,0 +1,23 @@
+<h1><%= org_profile.name %></h1>
+
+<h2>who we are</h2>
+<%= org_profile.mission_statement %>
+
+<h2>what we stand for</h2>
+<%= org_profile.blurb %>
+
+<h2>how to get involved</h2>
+<ul>
+<% org_profile.tasks.each do |task| %>
+<li><%= link_to task.title, org_profile_task_path(org_profile, task) %>
+<a href="/orgs/<%= org_profile.id %>/tasks/<%= task.id %>">task.title</a>
+<%= task.blurb %></li>
+<% end %>
+</ul>
+
+<style>
+body {
+  font-family: 'Courier New', monospace;
+  background-color:#A0BFB6
+}
+</style>

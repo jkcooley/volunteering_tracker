@@ -1,0 +1,30 @@
+<h1><%= @user_profile.name %>'s profile</h1>
+
+<h2>points accumulated</h2>
+<%= @user_profile.total_points %>
+<h3>recent activities</h3>
+<h4>log volunteering</h4>
+<%= form_with model: [ @user_profile, @user_profile.tasks.build ] do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  <% @user_profile.errors.full_messages_for(:tasks).each do |message| %>
+    <%= message %>
+    <% end %>
+    <%= form.submit "log" %>
+  <% end %>
+
+<%= form_with model: @user_profile do |form| %>
+  <h3><%= form.label :email %></h3>
+  <%= form.text_field :email %>
+  <% @user_profile.errors.full_messages_for(:email).each do |message| %>
+    <%= message %>
+  <% end %>
+  <%= form.submit "update email" %>
+<% end %> 
+
+<style>
+body {
+  font-family: 'Courier New', monospace;
+  background-color:#A0BFB6
+}
+</style>

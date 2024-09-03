@@ -1,0 +1,19 @@
+<h1>This is where orgs go</h1>
+
+<ul>
+  <% @org_profiles.each do |org_profile| %>
+    <h3>
+      <a href="/orgs/<%= org_profile.id %>">
+        <%= org_profile.name %>
+      </a>
+      <h5>contact us at: <%= org_profile.contact_info %></h5>
+    </h3>
+  <% end %>
+</ul>
+
+<style>
+body {
+  font-family: 'Courier New', monospace;
+  background-color:#A0BFB6
+}
+</style>

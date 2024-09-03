@@ -1,0 +1,18 @@
+<%= render "show", org_profile: @org_profile %>
+
+<%= link_to "edit organization details", "update" %>
+
+<h3>Add opportunity:</h3>
+<%= form_with model: [ @org_profile, @org_profile.tasks.build ] do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :blurb %><br>
+    <%= form.text_area :blurb %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
